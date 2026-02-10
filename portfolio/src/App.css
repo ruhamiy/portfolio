@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+  background: #f2f7ff;
+  color: #2b2b2b;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: white;
+  padding: 12px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around; /* logo left, hamburger/nav-links right */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  z-index: 1000;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 22px;
+  color: #6495ED;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #333;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #6495ED;
+}
+
+.hamburger {
+  display: none; /* hidden on desktop */
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block; /* show hamburger on mobile */
+  }
+
+  .nav-links {
+    display: none; /* hide links by default */
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%; /* full width white background */
+    background: white;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.open {
+    display: flex; /* show when toggled */
+  }
+
+  .nav-links a {
+    margin: 15px 0;
+  }
+}
+/* ================= SECTIONS ================= */
+.section {
+  min-height: 100vh;
+  padding: 120px 8%;
+}
+
+.center {
+  text-align: center;
+}
+
+/* Section Titles - same size, no coloring */
+.section-title {
+  font-size: 2.8rem; /* same size as Projects */
+  font-weight: 700;
+  text-align: center;
+  color: #333; /* no extra coloring */
+  margin-bottom: 20px;
+}
+
+/* ================= HOME ================= */
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 60px;
+}
+
+.home h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #6495ED; /* Blue accent for name */
+}
+
+.home h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2b2b2b;
+  margin-top: 10px;
+}
+
+.home p {
+  max-width: 650px;
+  color: #555;
+  font-size: 1.15rem; /* slightly larger */
+  margin-top: 15px;
+}
+/* Container for buttons */
+.home-buttons {
+  display: flex;
+  gap: 20px; /* horizontal space between buttons */
+  justify-content: center;
+  margin-top: 25px;
+}
+
+/* Spacer for vertical space before next section */
+.spacer {
+  height: 120px; /* space before Contact section */
+}
+
+/* Regular button */
+.btn {
+  padding: 12px 28px;
+  background: white;
+  color: #6495ED;
+  border: 2px solid #6495ED;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Hover effect for regular button */
+.btn:hover {
+  background: #6495ED;
+  color: white;
+}
+
+/* Outline button (Contact Me) */
+.btn.outline {
+  background: white;
+  color: #6495ED;
+  border: 2px solid #6495ED;
+}
+
+/* Hover effect for outline button */
+.btn.outline:hover {
+  background: #6495ED; /* fill with blue on hover */
+  color: white;        /* text turns white */
+}
+
+
+/* ================= ABOUT ================= */
+/* ================= ABOUT ================= */
+
+/* Section title */
+#about h2 {
+  font-size: 2.8rem;   /* same as Projects title */
+  font-weight: 700;
+  color: #333;         /* no extra coloring */
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Intro passionate paragraph */
+#about .intro {
+  font-size: 1.45rem;  /* slightly larger */
+  font-weight: 600;
+  color: #6495ED;      /* favorite blue */
+  line-height: 2;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Other paragraphs */
+#about p:not(.intro) {
+  font-size: 1.25rem;  /* larger paragraph text */
+  color: #555;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto 15px auto;  /* center with spacing */
+  text-align: center;
+}
+
+
+/* ================= SKILLS ================= */
+#skills h2 {
+  font-size: 2.8rem; /* same as Projects title */
+  font-weight: 700;
+  color: #333; /* no extra coloring */
+  margin-bottom: 20px;
+  text-align: center;
+}
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.skill-box {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+  transition: 0.3s;
+}
+
+.skill-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.skill-bar-bg {
+  background: #e5edff;
+  height: 8px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.skill-bar-fill {
+  background: #6495ED; /* blue for percentage */
+  height: 100%;
+  border-radius: 5px;
+}
+
+/* Mobile skills */
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================= PROJECTS ================= */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  max-width: 950px;
+  margin: auto;
+}
+
+.project-card {
+  background: white;
+  padding: 22px;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  transition: 0.3s;
+  text-align: left;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+}
+
+.project-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+  color: #2b2b2b; /* removed coloring */
+}
+
+.project-card p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Mobile projects */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ================= CONTACT ================= */
+
+.contact-text {
+  text-align: center;
+  color: #555;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+.contact-info p {
+  font-size: 1.2rem;
+  color: #333; /* text color normal */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  margin: 8px 0;
+}
+
+.contact-info p svg {
+  color: #6495ED; /* icon color only */
+}
+
+.connect-title {
+  text-align: center;
+  font-size: 2.2 rem; /* same as other section titles */
+  margin-top: 20px;
+  color: #333; /* no extra coloring */
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  font-size: 2.2rem;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  color: #6495ED; /* only icons colored */
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: #6495ED;
+}
